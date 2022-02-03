@@ -12,8 +12,19 @@
 */
 
 Route::get('/', function () {
-    return view('notas');
+    return view('welcome');
 });
+
+Route::get('notas', function(){
+    $notas = [
+        /*'Primera Nota',
+        'Segunda Nota',
+        'Terceta Nota',
+        'Cuarta Nota',*/
+    ];
+    return view('notas', ['notas' => $notas]);
+});
+
 
 Route::get('agregar', function () {
     return view('agregar');
@@ -23,12 +34,7 @@ Route::get('editar', function () {
     return view('editar');
 });
 
-
-Route::get('notas', function(){
-    return 'Aquí estará nuestro listado de notas';
-});
-
-Route::get('notas/crear', function (){
+/*Route::get('notas/crear', function (){
     return 'Aquí será la vista para crear las notas';
 });
 
@@ -55,4 +61,4 @@ Route::get('ruta2/prueba2', function (){
 
 Route::get('ruta1/actualizar', function (){
     return 'Aquí será la ruta para actualizar';
-});
+});*/
