@@ -23,7 +23,7 @@
                     </footer>
                 </div>
                 @empty
-                    <p>No hay registros que mostrar en este momento <a href = "/agregar">Agregar</a></p>
+                    <p>No hay registros que mostrar en este momento <a href = "{{url('agregar')}}">Agregar</a></p>
                 @endforelse
                 <div class="card card-small">
                     <div class="card-body">

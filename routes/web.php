@@ -11,11 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('notas', function(){
+Route::get('/', function(){
     $notas = [
         /*'Primera Nota',
         'Segunda Nota',
@@ -23,12 +19,12 @@ Route::get('notas', function(){
         'Cuarta Nota',*/
     ];
     return view('notas', ['notas' => $notas]);
-});
+})->name('listar');
 
 
 Route::get('agregar', function () {
     return view('agregar');
-});
+})->name('nuevanota');
 
 Route::get('editar', function () {
     return view('editar');
