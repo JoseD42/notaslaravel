@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\File;
 
 class NotasSeeder extends Seeder
 {
@@ -16,6 +17,11 @@ class NotasSeeder extends Seeder
             'titulo' => 'Mi primera nota',
             'contenido' => 'Contenido de prueba',
             
+        ]);
+
+        DB::table('notas')->insert([
+            'titulo' => 'Instalación de laravel',
+            'contenido' => File::get(__DIR__.'/notas/install.html'),
         ]);
     }
 }
