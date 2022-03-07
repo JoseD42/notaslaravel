@@ -10,25 +10,27 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', function(){
-    $notas = [
-        /*'Primera Nota',
-        'Segunda Nota',
-        'Terceta Nota',
-        'Cuarta Nota',*/
-    ];
-    return view('notas', ['notas' => $notas]);
-})->name('listar');
-
-
-Route::get('agregar', function () {
-    return view('agregar');
-})->name('nuevanota');
-
-Route::get('editar', function () {
-    return view('editar');
+Route::get('/', function () {
+    return view('welcome');
 });
+
+Route::get('notas', function () {
+    $notas = DB::table('notas')->get();
+
+    return view('notas', ['notas' => $notas]);
+});
+
+Route::get('notas/agregar', function () {
+    return view('agregar');
+});
+
+Route::get('notas/{id}/editar', function ($id) {
+    $nota = DB::table('notas')
+    ->where('id', $id)
+    ->first();
+
+    return view('editar');
+})->name('notas.edit');
 
 /*Route::get('notas/crear', function (){
     return 'Aquí será la vista para crear las notas';
@@ -58,3 +60,5 @@ Route::get('ruta2/prueba2', function (){
 Route::get('ruta1/actualizar', function (){
     return 'Aquí será la ruta para actualizar';
 });*/
+
+#Clase viernes 04 marzo:
