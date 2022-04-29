@@ -29,6 +29,8 @@ Route::get('notas/{id}/editar', 'NotasController@editar')->name('notas.edit');
 
 Route::put('notas/{notas}/editar', 'NotasController@update')->name('notas.update');
 
+Route::delete('notas/{id}', 'NotasController@destroy')->name('notas.destroy');
+
 /*Route::get('notas/crear', function (){
     return 'Aquí será la vista para crear las notas';
 });
